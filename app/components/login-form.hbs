@@ -1,0 +1,16 @@
+<form method="post">
+  <div >
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  id={{this.myUId}} required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id={{this.myUniqueId}} required>
+    <button type="button" {{on 'click' this.login}} >Login</button>
+   
+  </div>
+
+
+</form>
