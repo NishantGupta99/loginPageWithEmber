@@ -6,6 +6,8 @@ import Router from '../router';
 
 
 export default class LoginFormComponent extends Component {
+    @service router
+    path= "logged"
     @tracked email = 'bruno@email.com';
     @tracked pwd = 'bruno';
 
@@ -22,11 +24,10 @@ export default class LoginFormComponent extends Component {
             email: this.email,
             password: this.pwd,
           }),
-        }).then(response=> response.json())
+        }).then(response=>  response.json())
         .then(data=>{
-            Router.map(function() {
-                this.route('/logged');
-              });
+            this.router.transitionTo(this.path);
+            
         });
     }
 
